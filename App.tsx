@@ -90,7 +90,7 @@ const App: React.FC = () => {
           >
             <div className="w-64 h-80 md:w-96 md:h-[500px] bg-white overflow-hidden flex items-center justify-center">
               <img 
-                src="/assets/hritvikimage/ANMnL-UgGRAPhsgXK3EED.png" 
+                src={`${import.meta.env.BASE_URL}assets/hritvikimage/ANMnL-UgGRAPhsgXK3EED.png`}
                 alt="Hritvik Gupta" 
                 className="object-contain w-full h-full grayscale"
               />
@@ -164,7 +164,7 @@ const App: React.FC = () => {
                             className="font-bold text-black hover:text-gray-700 inline-flex items-center gap-2 underline"
                           >
                             <img 
-                              src="/assets/plat.png" 
+                              src={`${import.meta.env.BASE_URL}assets/plat.png`}
                               alt="PLATLAS" 
                               className="inline-block h-6 w-auto object-contain"
                             />
@@ -214,14 +214,14 @@ const App: React.FC = () => {
                       <div key={idx} className="flex-shrink-0 w-full md:w-[400px] aspect-video bg-gray-100 overflow-hidden relative border border-gray-100">
                         {media.type === 'video' ? (
                            <video 
-                             src={media.url} 
+                             src={`${import.meta.env.BASE_URL}${media.url.replace(/^\//, '')}`}
                              controls 
                              className="w-full h-full object-cover" 
-                             poster={media.thumbnail}
+                             poster={media.thumbnail ? `${import.meta.env.BASE_URL}${media.thumbnail.replace(/^\//, '')}` : undefined}
                            />
                         ) : (
                            <img 
-                             src={media.url} 
+                             src={`${import.meta.env.BASE_URL}${media.url.replace(/^\//, '')}`}
                              alt={`${project.title} screenshot ${idx + 1}`} 
                              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out" 
                            />

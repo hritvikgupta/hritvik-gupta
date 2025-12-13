@@ -1,20 +1,52 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Hritvik Gupta - Portfolio Website
 
-# Run and deploy your AI Studio app
+Personal portfolio website showcasing projects, experience, and skills in AI Engineering and Research.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1YvFoIXC0S4m1fc0_ZHF0zs1jCLnAUZe4
+- Modern, responsive design with elegant typography
+- AI-powered chat assistant using Google Gemini
+- Project showcases with media galleries
+- Experience timeline
+- Skills and technologies display
+- Contact section
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- **Frontend:** React 18, TypeScript, Vite
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **AI:** Google Gemini API
+- **Deployment:** GitHub Pages
 
+## Local Development
+
+**Prerequisites:** Node.js
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+   ```bash
+   npm install
+   ```
+
+2. Set the `GEMINI_API_KEY` in `.env.local` to your Gemini API key:
+   ```
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
 3. Run the app:
-   `npm run dev`
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Deployment
+
+This site is deployed to GitHub Pages. See `DEPLOYMENT.md` for detailed deployment instructions.
+
+## Live Site
+
+Visit: [https://hritvikgupta.github.io/hritvik-gupta/](https://hritvikgupta.github.io/hritvik-gupta/)

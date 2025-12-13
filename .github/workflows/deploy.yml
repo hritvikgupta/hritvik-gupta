@@ -32,7 +32,13 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: |
+          echo "Building with GITHUB_REPOSITORY=${{ github.repository }}"
+          npm run build
+          echo "Build complete. Checking dist folder:"
+          ls -la dist/
+          echo "Checking built index.html:"
+          head -70 dist/index.html | tail -10
         env:
           GITHUB_REPOSITORY: ${{ github.repository }}
           NODE_ENV: production

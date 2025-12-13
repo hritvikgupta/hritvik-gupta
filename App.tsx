@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Section from './components/Section';
-import GeminiChat from './components/GeminiChat';
 import { PORTFOLIO_DATA } from './constants';
 import { motion } from 'framer-motion';
 
@@ -319,7 +318,6 @@ const App: React.FC = () => {
         &copy; {new Date().getFullYear()} {PORTFOLIO_DATA.name}. All rights reserved.
       </footer>
 
-      <GeminiChat />
     </div>
   );
 };

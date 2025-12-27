@@ -140,6 +140,31 @@ export const PORTFOLIO_DATA: PortfolioData = {
         { type: 'image', url: '/assets/storyborrd/image%20(1).webp' },
         { type: 'image', url: '/assets/storyborrd/image%20(2).webp' }
       ]
+    },
+    {
+      id: "proj-4",
+      title: "Learning Software",
+      description: [
+        "Interactive learning platform designed to help developers master software engineering concepts through hands-on practice",
+        "Comprehensive library covering Data Structures & Algorithms, System Design, Machine Learning, LLMs, NLP, Computer Vision, and DevOps",
+        "Code & Learn feature with built-in sandbox environment for writing, running, and testing code with instant feedback",
+        "LeetCode-style problem solving with real-time code execution and test case validation",
+        "Interactive Jupyter-style notebooks directly in the browser for experimentation and data visualization",
+        "Course creation tools allowing experts to publish and share their knowledge with learners worldwide",
+        "Advanced LLM curriculum including Transformers, BERT, GPT, LLaMA, RAG, PEFT, and latest models like DeepSeek and Claude",
+        "System Design deep dives covering Netflix, YouTube, Instagram, Uber, Spotify, and other major tech architectures",
+        "Smart note-taking system integrated with courses for building a personal knowledge base",
+        "Seamless simulations, executable code, and deep explanations — all in one place"
+      ],
+      technologies: ["React", "TypeScript", "Python", "FastAPI", "Docker", "AWS", "PostgreSQL", "Redis", "WebSocket", "Kubernetes", "Code Execution Engine"],
+      link: "https://www.learningsoftwares.com",
+      media: [
+        { type: 'image', url: '/assets/learningsoftwares/diversecoursesoftwareengineering.png' },
+        { type: 'image', url: '/assets/learningsoftwares/codeandlearn.png' },
+        { type: 'image', url: '/assets/learningsoftwares/createcourse.png' },
+        { type: 'image', url: '/assets/learningsoftwares/notebook.png' },
+        { type: 'image', url: '/assets/learningsoftwares/notes.png' }
+      ]
     }
   ],
   education: [

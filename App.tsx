@@ -23,8 +23,8 @@ const App: React.FC = () => {
 
   const heroItem = {
     hidden: { opacity: 0, y: 30 },
-    show: { 
-      opacity: 1, 
+    show: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.8,
@@ -36,11 +36,11 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center px-6 pt-20 pb-10">
         <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-          <motion.div 
+          <motion.div
             className="order-2 md:order-1"
             variants={heroContainer}
             initial="hidden"
@@ -56,24 +56,32 @@ const App: React.FC = () => {
               {PORTFOLIO_DATA.title} based in {PORTFOLIO_DATA.location}.
             </motion.h2>
             <motion.div variants={heroItem} className="flex flex-wrap gap-8 items-center">
-              <a 
-                href="#projects" 
+              <a
+                href="#projects"
                 onClick={handleViewWorkClick}
                 className="border-b border-black pb-1 hover:text-gray-600 transition-colors text-sm uppercase tracking-widest"
               >
                 View Work
               </a>
-              <a 
-                href={PORTFOLIO_DATA.socials.find(s => s.platform === 'LinkedIn')?.url} 
-                target="_blank" 
+              <a
+                href={PORTFOLIO_DATA.socials.find(s => s.platform === 'LinkedIn')?.url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="border-b border-transparent hover:border-black pb-1 transition-all text-sm uppercase tracking-widest text-gray-500 hover:text-black"
               >
                 LinkedIn
               </a>
-              <a 
-                href={PORTFOLIO_DATA.socials.find(s => s.platform === 'GitHub')?.url} 
-                target="_blank" 
+              <a
+                href="https://www.learningsoftwares.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-transparent hover:border-black pb-1 transition-all text-sm uppercase tracking-widest text-gray-500 hover:text-black"
+              >
+                Learning Software
+              </a>
+              <a
+                href={PORTFOLIO_DATA.socials.find(s => s.platform === 'GitHub')?.url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="border-b border-transparent hover:border-black pb-1 transition-all text-sm uppercase tracking-widest text-gray-500 hover:text-black"
               >
@@ -81,17 +89,17 @@ const App: React.FC = () => {
               </a>
             </motion.div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="order-1 md:order-2 flex justify-center md:justify-end"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
           >
             <div className="w-64 h-80 md:w-96 md:h-[500px] bg-white overflow-hidden flex items-center justify-center">
-              <img 
+              <img
                 src={`${import.meta.env.BASE_URL}assets/hritvikimage/ANMnL-UgGRAPhsgXK3EED.png`}
-                alt="Hritvik Gupta" 
+                alt="Hritvik Gupta"
                 className="object-contain w-full h-full grayscale"
               />
             </div>
@@ -105,16 +113,16 @@ const App: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="text-lg leading-relaxed text-gray-700 whitespace-pre-line font-light">
             {PORTFOLIO_DATA.about}
-            
+
             <div className="mt-8">
-               <h4 className="text-xl italic mb-4">Education</h4>
-               {PORTFOLIO_DATA.education.map((edu, i) => (
-                 <div key={i} className="mb-2">
-                   <p className="font-medium">{edu.degree}</p>
-                   <p className="text-gray-600 font-light">{edu.institution}</p>
-                   <p className="text-xs text-gray-400 mt-1">{edu.period}</p>
-                 </div>
-               ))}
+              <h4 className="text-xl italic mb-4">Education</h4>
+              {PORTFOLIO_DATA.education.map((edu, i) => (
+                <div key={i} className="mb-2">
+                  <p className="font-medium">{edu.degree}</p>
+                  <p className="text-gray-600 font-light">{edu.institution}</p>
+                  <p className="text-xs text-gray-400 mt-1">{edu.period}</p>
+                </div>
+              ))}
             </div>
           </div>
           <div>
@@ -157,15 +165,15 @@ const App: React.FC = () => {
                       return (
                         <li key={i}>
                           {parts[0]}
-                          <a 
-                            href="https://platlas.cels.anl.gov/" 
-                            target="_blank" 
+                          <a
+                            href="https://platlas.cels.anl.gov/"
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="font-bold text-black hover:text-gray-700 inline-flex items-center gap-2 underline"
                           >
-                            <img 
+                            <img
                               src={`${import.meta.env.BASE_URL}assets/plat.png`}
-                              alt="PLATLAS" 
+                              alt="PLATLAS"
                               className="inline-block h-6 w-auto object-contain"
                             />
                             PLATLAS
@@ -213,18 +221,18 @@ const App: React.FC = () => {
                     {project.media.map((media, idx) => (
                       <div key={idx} className="flex-shrink-0 w-full md:w-[400px] aspect-video bg-gray-100 overflow-hidden relative border border-gray-100">
                         {media.type === 'video' ? (
-                           <video 
-                             src={`${import.meta.env.BASE_URL}${media.url.replace(/^\//, '')}`}
-                             controls 
-                             className="w-full h-full object-cover" 
-                             poster={media.thumbnail ? `${import.meta.env.BASE_URL}${media.thumbnail.replace(/^\//, '')}` : undefined}
-                           />
+                          <video
+                            src={`${import.meta.env.BASE_URL}${media.url.replace(/^\//, '')}`}
+                            controls
+                            className="w-full h-full object-cover"
+                            poster={media.thumbnail ? `${import.meta.env.BASE_URL}${media.thumbnail.replace(/^\//, '')}` : undefined}
+                          />
                         ) : (
-                           <img 
-                             src={`${import.meta.env.BASE_URL}${media.url.replace(/^\//, '')}`}
-                             alt={`${project.title} screenshot ${idx + 1}`} 
-                             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out" 
-                           />
+                          <img
+                            src={`${import.meta.env.BASE_URL}${media.url.replace(/^\//, '')}`}
+                            alt={`${project.title} screenshot ${idx + 1}`}
+                            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+                          />
                         )}
                       </div>
                     ))}
@@ -245,43 +253,43 @@ const App: React.FC = () => {
                   </ul>
                 </div>
                 <div className="md:col-span-1">
-                   <div className="text-xs font-sans text-gray-400 uppercase tracking-wider leading-6">
-                     {project.technologies.join(' · ')}
-                   </div>
+                  <div className="text-xs font-sans text-gray-400 uppercase tracking-wider leading-6">
+                    {project.technologies.join(' · ')}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </Section>
-      
+
       {/* Research & Recognition Section */}
       <Section id="research">
-         <h3 className="text-sm font-bold uppercase tracking-widest mb-12 border-b border-gray-200 pb-4">Research & Recognition</h3>
-         
-         <div className="grid md:grid-cols-2 gap-16">
-            <div>
-              <h4 className="text-xl italic mb-6">Publications</h4>
-              <ul className="space-y-4 font-light text-sm text-gray-700 leading-relaxed">
-                {PORTFOLIO_DATA.publications.map((pub, i) => (
-                  <li key={i}>
-                    {pub.citation}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-xl italic mb-6">Awards</h4>
-              <ul className="space-y-4 font-light text-sm text-gray-700 leading-relaxed">
-                {PORTFOLIO_DATA.awards.map((award, i) => (
-                  <li key={i}>
-                    {award}
-                  </li>
-                ))}
-              </ul>
-            </div>
-         </div>
+        <h3 className="text-sm font-bold uppercase tracking-widest mb-12 border-b border-gray-200 pb-4">Research & Recognition</h3>
+
+        <div className="grid md:grid-cols-2 gap-16">
+          <div>
+            <h4 className="text-xl italic mb-6">Publications</h4>
+            <ul className="space-y-4 font-light text-sm text-gray-700 leading-relaxed">
+              {PORTFOLIO_DATA.publications.map((pub, i) => (
+                <li key={i}>
+                  {pub.citation}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xl italic mb-6">Awards</h4>
+            <ul className="space-y-4 font-light text-sm text-gray-700 leading-relaxed">
+              {PORTFOLIO_DATA.awards.map((award, i) => (
+                <li key={i}>
+                  {award}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </Section>
 
       {/* Contact Section */}
@@ -289,21 +297,21 @@ const App: React.FC = () => {
         <div className="text-center py-20">
           <h2 className="text-4xl md:text-6xl font-medium mb-8">Let's connect.</h2>
           <p className="text-xl font-light text-gray-600 mb-12 max-w-xl mx-auto">
-             Reach out for collaborations on scalable AI systems or innovative data solutions.
+            Reach out for collaborations on scalable AI systems or innovative data solutions.
           </p>
-          <a 
+          <a
             href={`mailto:${PORTFOLIO_DATA.email}`}
             className="inline-block border border-black px-8 py-4 text-xs lowercase tracking-widest hover:bg-black hover:text-white transition-colors"
           >
             {PORTFOLIO_DATA.email}
           </a>
-          
+
           <div className="mt-20 flex justify-center gap-8">
             {PORTFOLIO_DATA.socials.map(social => (
-              <a 
-                key={social.platform} 
-                href={social.url} 
-                target="_blank" 
+              <a
+                key={social.platform}
+                href={social.url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm uppercase tracking-widest hover:line-through decoration-1"
               >
